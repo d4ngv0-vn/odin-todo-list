@@ -1,16 +1,16 @@
-import { Data, dataLocation } from "../utils/service.js";
+import { Data, dataLocation, projectsLocation, todoCardLocation } from "../utils/service.js";
 import ProjectService from "./projectService.js";
 
 const TodoCardService = {
     addTodoCard: (projectId, todoCard) => {
-        const JSONdata = localStorage.getItem(dataLocation);
+        const JSONdata = localStorage.getItem(todoCardLocation);
         if (JSONdata) {
             const data = JSON.parse(JSONdata);
             for (let i = 0; i < data.length; ++i) {
                 if (data[i].projectId === projectId) {
                     data[i].todoList.push(todoCard);
                     const saved = JSON.stringify(data);
-                    localStorage.setItem(dataLocation, saved);
+                    localStorage.setItem(todoCardLocation, saved);
                     return Data('ADDED', {})
                 }
             }
@@ -19,7 +19,7 @@ const TodoCardService = {
         return Data('DATA NOT FOUND', {});
     },
     editTodoCard(projectId, cardId, todoCard) {
-        const JSONdata = localStorage.getItem(dataLocation);
+        const JSONdata = localStorage.getItem(todoCardLocation);
         if (JSONdata) {
             const data = JSON.parse(JSONdata);
             for (let i = 0; i < data.length; ++i) {
@@ -28,7 +28,7 @@ const TodoCardService = {
                         if (data[i].todoList[j].cardId === cardId) {
                             data[i].todoList[j] = todoCard;
                             const saved = JSON.stringify(data);
-                            localStorage.setItem(dataLocation, saved);
+                            localStorage.setItem(todoCardLocation, saved);
                             return Data('EDITED', {});
                         }
                     }
@@ -40,7 +40,7 @@ const TodoCardService = {
         return Data('DATA NOT FOUND', {});
     },
     getTodoCard: (projectId, cardId) => {
-        const JSONdata = localStorage.getItem(dataLocation);
+        const JSONdata = localStorage.getItem(todoCardLocation);
         if (JSONdata) {
             const data = JSON.parse(JSONdata);
             for (let i = 0; i < data.length; ++i) {
@@ -58,7 +58,7 @@ const TodoCardService = {
         return Data('DATA NOT FOUND', {});
     },
     removeTodoCard: (projectId, cardId) => {
-        const JSONdata = localStorage.getItem(dataLocation);
+        const JSONdata = localStorage.getItem(todoCardLocation);
         if (JSONdata) {
             const data = JSON.parse(JSONdata);
             for (let i = 0; i < data.length; ++i) {
@@ -67,7 +67,7 @@ const TodoCardService = {
                         if (data[i].todoList[j].cardId === cardId) {
                             data[i].todoList.splice(j, 1);
                             const saved = JSON.stringify(data);
-                            localStorage.setItem(dataLocation, saved);
+                            localStorage.setItem(todoCardLocation, saved);
                             return Data('REMOVED', {});
                         }
                     }
@@ -78,8 +78,19 @@ const TodoCardService = {
         } 
         return Data('DATA NOT FOUND', {});
     },
-    getTodoCardList: () => {
-
+    getTodoList: (projectId) => {
+        const JSONdata = localStorage.getItem(todoCardLocation);
+        if (JSONdata) {
+            const data = JSON.parse(JSONdata);
+            // console.log("getTodoList", data);
+            for (let i = 0; i < data.length; ++i) {
+                if (data[i].projectId == projectId) {
+                    return Data("FOUND", data[i].todoList);
+                }
+            }
+            return Data("PROJECT NOT FOUND", {});
+        }
+        return Data("DATA NOT FOUND", {});
     }
 }
 

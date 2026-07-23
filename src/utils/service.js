@@ -9,6 +9,7 @@ const Data = (code = 'NOT FOUND', data) => {
 }
 
 const dataLocation = 'odinTodoList';
+const projectsLocation = 'projects';
+const todoCardLocation = 'todoCards';
 
-
-export { Data, dataLocation };
+export { Data, dataLocation, projectsLocation, todoCardLocation };
