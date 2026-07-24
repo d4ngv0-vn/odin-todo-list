@@ -4,6 +4,7 @@ import TodoCardController from "./controllers/todoCardController.js";
 import HomePage from "./home/index.js";
 import ProjectsPage from "./projects/index.js";
 import './style.css';
+import AboutPage from "./about/index.js";
 // import ProjectPage from "./project/index.js";
 
 
@@ -11,6 +12,7 @@ const HeaderNav = () => {
     const navBtns = document.querySelectorAll('.nav-btn');
 
     const homePage = HomePage();
+    const aboutPage = AboutPage();
     
     for (let navBtn of navBtns) {
         navBtn.addEventListener('click', (event) => {
@@ -21,7 +23,7 @@ const HeaderNav = () => {
                 const projectsPage = ProjectsPage();
                 DOMTool.render([projectsPage]);
             } else if (page == 'About') {
-                DOMTool.render([]);
+                DOMTool.render([aboutPage]);
             }
         });
     }

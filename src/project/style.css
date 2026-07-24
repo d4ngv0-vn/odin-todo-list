@@ -42,18 +42,27 @@
 }
 
 .project-btn {
-    background-color: var(--primary);
+    background-color: var(--accent);
     border: none;
     border-radius: 16px;
     padding: 16px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-weight: var(--header-font-weight);
     font-size: var(--header-font-size);
+    color: var(--secondary-txt);
+}
+
+.project-btn:hover {
+    background-color: var(--hover);
 }
 
 #project-delete-btn {
     background-color: var(--warning);
     color: var(--secondary-txt);
+}
+
+#project-delete-btn:hover {
+    background-color: var(--warning-hover);
 }
 
 #todo-card-container {

@@ -17,6 +17,10 @@
     
 }
 
+#project-add:hover {
+    background-color: var(--hover);
+}
+
 #projects-container {
     display: grid;
     margin: 4px 16px;

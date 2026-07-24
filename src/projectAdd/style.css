@@ -1,0 +1,64 @@
+#project-card-add {
+    display: grid;
+    padding: 32px;
+}
+
+#project-card-add-form {
+    margin: 8px;
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    row-gap: 8px;
+    background-color: var(--secondary);
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.project-card-add-label {
+    font-size: var(--secondary-font-size);
+    font-weight: var(--secondary-font-weight);
+}
+
+#project-card-add-legend {
+    grid-column: 1 / span 2;
+    align-self: center;
+    justify-self: center;
+    font-size: var(--header-font-size);
+    font-weight: var(--header-font-weight   );
+}
+
+#project-card-add-name {
+    border: none;
+    padding: 16px;
+    border-radius: 16px;
+    /* grid-row: auto / span 3; */
+    align-self: center;
+    font-size: var(--content-font-size);
+    background-color: var(--primary);
+}
+
+#project-card-add-description {
+    /* grid-column: 2 /span 2; */
+    border: none;
+    padding: 16px;
+    border-radius: 16px;
+    grid-row: auto / span 3;
+    resize: none;
+    background-color: var(--primary);
+
+}
+
+#project-card-add-submit-btn {
+    grid-column: 1 / span 2;
+    border: none;
+    border-radius: 16px;
+    padding: 8px;
+    background-color: var(--accent);
+    color: var(--secondary-txt);
+    font-size: var(--secondary-font-size);
+    font-weight: var(--secondary-font-weight);
+}
+
+#project-card-add-submit-btn:hover {
+    background-color: var(--hover);
+}

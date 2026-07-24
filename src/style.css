@@ -60,6 +60,7 @@ h1, h2, h3, h4, h5, h6 {
     --accent: #4BB8FA;
     --hover: #2C5EAD;
     --warning: #ff0000;
+    --warning-hover: #790000;
     --disabled: #2FA084;
     --primary-txt: #000000;
     --secondary-txt: #ffffff;
@@ -113,6 +114,10 @@ nav {
     border-radius: var(--btn-border-radius);
     font-weight: var(--header-font-weight);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.nav-btn:hover {
+  background-color: var(--hover);
 }
 
 #content {

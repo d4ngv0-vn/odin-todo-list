@@ -1,6 +1,7 @@
 import ProjectController from "../controllers/projectController.js";
 import ProjectPage from "../project/index.js";
 import DOMTool from "../utils/DOMTool.js";
+import './style.css';
 
 const ProjectCardAdd = () => {
     const projectCardAdd = DOMTool.create('div', [], 'project-card-add');
@@ -15,17 +16,17 @@ const ProjectCardAdd = () => {
     name.name = 'name';
     name.focus();
 
-    const nameLabel = DOMTool.create('label', ['label'], 'project-card-add-name-label');
+    const nameLabel = DOMTool.create('label', ['project-card-add-label'], 'project-card-add-name-label');
     nameLabel.htmlFor = 'project-card-add-name';
     nameLabel.textContent = 'Project name';
 
-    const description = DOMTool.create('input', [], 'project-card-add-description');
-    description.type = 'text';
-    description.placeholder = 'Road to conquire all exams';
+    const description = DOMTool.create('textarea', [], 'project-card-add-description');
+    // description.type = 'text';
+    description.placeholder = 'Road to conquer all exams';
     description.name = 'description';
 
     
-    const descriptionLabel = DOMTool.create('label', ['label'], 'project-card-add-description-label');
+    const descriptionLabel = DOMTool.create('label', ['project-card-add-label'], 'project-card-add-description-label');
     descriptionLabel.htmlFor = 'project-card-add-description';
     descriptionLabel.textContent = 'Project description';
 

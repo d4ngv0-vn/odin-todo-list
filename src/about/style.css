@@ -1,0 +1,25 @@
+#about-page {
+    display: grid;
+    border-radius: 16px;
+    background-color: var(--secondary);
+    margin: 16px;
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#about-title {
+    align-self: center;
+    justify-self: center;
+}
+
+#about-content {
+    justify-self: center;
+}
+
+#about-link {
+    justify-self: center;
+}
+
+#about-reference {
+    justify-self: center;
+}

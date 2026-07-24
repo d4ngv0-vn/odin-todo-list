@@ -39,10 +39,13 @@ const ProjectPage = (projectId) => {
 
     addTodoBtn.addEventListener('click', (event) => {
         TodoCardController.createTodoCard(projectId, 'Untitled card', '', new Date(), false, 'medium');
-        todoList = TodoCardController.getTodoList(projectId);
-        const tdc = TodoCard(projectId, todoList[todoList.length - 1]);
+        // todoList = TodoCardController.getTodoList(projectId);
+        // const tdc = TodoCard(projectId, todoList[todoList.length - 1]);
 
-        DOMTool.append(todoCardContainer, [tdc]);
+        // DOMTool.append(todoCardContainer, [tdc]);
+
+        const projectPage = ProjectPage(projectId);
+        DOMTool.render([projectPage]);
     });
 
     const deleteProjectBtn = DOMTool.create('button', ['project-btn'], 'project-delete-btn');

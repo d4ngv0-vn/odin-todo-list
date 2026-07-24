@@ -4,4 +4,17 @@
     color: var(--secondary-txt);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: var(--secondary);
+    display: grid;
+    /* grid-template-rows: 1fr 2fr 1fr; */
+    /* overflow-y: hidden; */
+}
+
+.project-card-description {
+    height: 10dvh;
+    overflow: hidden;  
+    min-width: 0;      
+}
+
+.project-card:hover {
+    background-color: var(--hover);
 }
