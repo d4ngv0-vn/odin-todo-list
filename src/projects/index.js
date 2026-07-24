@@ -2,6 +2,7 @@ import DOMTool from "../utils/DOMTool.js";
 import ProjectCard from "../components/projectCard.js";
 import ProjectController from "../controllers/projectController.js";
 import ProjectCardAdd from "../components/projectCardAdd.js";
+import './style.css';
 
 
 const ProjectsPage = () => {
@@ -10,7 +11,7 @@ const ProjectsPage = () => {
     const projectCardAdd = ProjectCardAdd();
     
     const addProjectBtn = DOMTool.create('button', [], 'project-add');
-    addProjectBtn.textContent = 'add';
+    addProjectBtn.textContent = 'Create new project';
     addProjectBtn.addEventListener('click', (event) => {
         DOMTool.render([projectCardAdd]);
     });

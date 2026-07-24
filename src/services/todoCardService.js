@@ -91,6 +91,54 @@ const TodoCardService = {
             return Data("PROJECT NOT FOUND", {});
         }
         return Data("DATA NOT FOUND", {});
+    },
+    moveUp: (projectId, cardId) => {
+        const JSONdata = localStorage.getItem(todoCardLocation);
+        if (JSONdata) {
+            const data = JSON.parse(JSONdata);
+            for (let i = 0; i < data.length; ++i) {
+                if (data[i].projectId == projectId) {
+                    for (let j = 0; j < data[i].todoList.length; ++j) {
+                        if (data[i].todoList[j].cardId == cardId) {
+                            let temp = data[i].todoList[j];
+                            data[i].todoList[j] = data[i].todoList[(j-1)%data[i].todoList.length];
+                            data[i].todoList[(j-1)%data[i].todoList.length] = temp;
+
+                            const saved = JSON.stringify(data);
+                            localStorage.setItem(todoCardLocation, saved);
+                            return Data('MOVED', {});
+                        }
+                    }
+                    return Data("CARD NOT FOUND", {});
+                }
+            }
+            return Data("PROJECT NOT FOUND", {});
+        }
+        return Data("DATA NOT FOUND", {}); 
+    },
+    moveDown: (projectId, cardId) => {
+        const JSONdata = localStorage.getItem(todoCardLocation);
+        if (JSONdata) {
+            const data = JSON.parse(JSONdata);
+            for (let i = 0; i < data.length; ++i) {
+                if (data[i].projectId == projectId) {
+                    for (let j = 0; j < data[i].todoList.length; ++j) {
+                        if (data[i].todoList[j].cardId == cardId) {
+                            let temp = data[i].todoList[j];
+                            data[i].todoList[j] = data[i].todoList[(j+1)%data[i].todoList.length];
+                            data[i].todoList[(j+1)%data[i].todoList.length] = temp;
+
+                            const saved = JSON.stringify(data);
+                            localStorage.setItem(todoCardLocation, saved);
+                            return Data('MOVED', {});
+                        }
+                    }
+                    return Data("CARD NOT FOUND", {});
+                }
+            }
+            return Data("PROJECT NOT FOUND", {});
+        }
+        return Data("DATA NOT FOUND", {}); 
     }
 }
 

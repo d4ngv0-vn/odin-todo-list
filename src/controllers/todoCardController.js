@@ -54,6 +54,14 @@ const TodoCardController = {
             return data.getData();
         }
         return [];
+    },
+    moveTodoUp: (projectId, cardId) => {
+        const status = TodoCardService.moveUp(projectId, cardId);
+        return status.getCode();
+    },
+    moveTodoDown: (projectId, cardId) => {
+        const status = TodoCardService.moveDown(projectId, cardId);
+        return status.getCode();
     }
 
 };

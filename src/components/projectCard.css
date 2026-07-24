@@ -1,0 +1,7 @@
+.project-card {
+    border-radius: var(--btn-border-radius);
+    border: none;
+    color: var(--secondary-txt);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: var(--secondary);
+}

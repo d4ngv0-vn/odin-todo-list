@@ -1,4 +1,5 @@
 import ProjectController from "../controllers/projectController.js";
+import ProjectPage from "../project/index.js";
 import DOMTool from "../utils/DOMTool.js";
 
 const ProjectCardAdd = () => {
@@ -12,6 +13,7 @@ const ProjectCardAdd = () => {
     name.type = 'text';
     name.placeholder = 'School work';
     name.name = 'name';
+    name.focus();
 
     const nameLabel = DOMTool.create('label', ['label'], 'project-card-add-name-label');
     nameLabel.htmlFor = 'project-card-add-name';
@@ -35,7 +37,14 @@ const ProjectCardAdd = () => {
         const projectDescription = formData.get('description');
         ProjectController.createProject(projectName, projectDescription);
 
+
         event.preventDefault();
+        
+        const projectList = ProjectController.getProjectList();
+        const projectId = projectList[projectList.length-1].projectId;
+
+        const projectPage = ProjectPage(projectId);
+        DOMTool.render([projectPage]);
     });
 
     DOMTool.append(form, [legend, nameLabel, name, descriptionLabel, description, button]);

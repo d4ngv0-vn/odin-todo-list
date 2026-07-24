@@ -1,7 +1,7 @@
 import ProjectPage from "../project/index.js";
 import DOMTool from "../utils/DOMTool.js";
 import DateTool from "../utils/dateTool.js";
-
+import './projectCard.css';
 
 const ProjectCard = (title, description, dateCreated, projectId) => {
     const projectCard = DOMTool.create('button', ['project-card'], projectId);
@@ -18,7 +18,7 @@ const ProjectCard = (title, description, dateCreated, projectId) => {
     projectCardDescription.textContent = description;
     
     const projectCardDateCreated = DOMTool.create('p', ['project-card-date-created']);
-    projectCardDateCreated.textContent = DateTool.getDate(dateCreated);
+    projectCardDateCreated.textContent = DateTool.getDateDefault(dateCreated);
 
 
     DOMTool.append(projectCard, [projectCardTitle, projectCardDescription, projectCardDateCreated]);

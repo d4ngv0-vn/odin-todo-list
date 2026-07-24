@@ -1,4 +1,110 @@
 .todo-card {
     display: grid;
-    grid-template-columns: 1fr 6fr 3fr 2fr;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr;
+    column-gap: 8px;
+    row-gap: 16px;
+    background-color: var(--secondary);
+
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.todo-card-name {
+    background: none;
+    border: none;
+    font-size: var(--content-font-size);
+    font-weight: var(--secondary-font-weight);
+    padding: 8px;
+    border-radius: 16px;
+}
+
+.todo-card-due-container {
+    background: none;
+    border: none;
+    font-size: var(--content-font-size);
+    font-weight: var(--secondary-font-weight);
+    align-self: center;
+    justify-self: center;
+
+}
+
+.todo-card-due {
+    background: none;
+    border: none;   
+    padding: 8px;
+    border-radius: 16px;
+}
+
+.todo-card-priority-container {
+    background: none;
+    border: none;
+    font-size: var(--content-font-size);
+    font-weight: var(--secondary-font-weight);
+    align-self: center;
+    justify-self: center;
+    display: flex;
+}
+
+.todo-card-priority-txt {
+    align-self: center;
+}
+
+.todo-card-priority {
+    background: none;
+    border: none;   
+    font-size: var(--content-font-size);
+    font-weight: var(--secondary-font-weight);
+    text-align: center;
+    padding: 8px;
+    border-radius: 16px;
+    align-self: center;
+}
+
+.todo-card-btn-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 4px;
+}
+
+.todo-card-btn {
+    border: none;
+    border-radius: 16px;
+    background-color: var(--accent);
+    color: var(--secondary-txt);
+    font-size: var(--content-font-size);
+    font-weight: var(--secondary-font-weight);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.todo-card-delete-btn {
+    background-color: var(--warning);
+}
+
+.todo-card-done {
+    accent-color: var(--accent);
+    border: none;
+    border-radius: 8px;
+}
+
+.todo-card-description {
+    width: 100%;
+    background: none;
+    border: none;
+    grid-column: 1 / span 5;
+    resize: none;
+    border-radius: 16px;
+    padding: 8px;
+    color: var(--secondary-txt);
+    font-size: var(--content-font-size);
+    font-weight: var(--content-font-weight);
+    word-wrap: pretty;
+}
+
+.todo-card-btn:disabled {
+    background-color: var(--disabled);
+}
+
+.hidden {
+    display: none;
 }

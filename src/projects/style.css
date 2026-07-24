@@ -1,0 +1,26 @@
+#projects-page {
+    display: grid;
+    grid-template-rows: 1fr 11fr;
+}
+
+#project-add {
+    margin: 8px 32px;
+    padding: 8px;
+    border-radius: var(--btn-border-radius);
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: var(--accent);
+    font-weight: var(--secondary-font-weight);
+    font-size: var(--secondary-font-size);
+    /* color: var(--secondary-txt-color); */
+    color: var(--secondary-txt);
+    
+}
+
+#projects-container {
+    display: grid;
+    margin: 4px 16px;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 16px;
+    row-gap: 16px;
+}

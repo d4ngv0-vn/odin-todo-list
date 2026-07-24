@@ -1,0 +1,63 @@
+#project-page {
+    display: grid;
+}
+
+#project-info-container {
+    display: grid;
+    margin: 36px 16px;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 8px;
+    background-color: var(--secondary);
+    border-radius: 16px;
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#project-name {
+    background: none;
+    border: none;
+    text-align: center;
+    color: var(--primary-txt);
+    font-weight: var(--header-font-weight);
+    font-size: var(--header-font-size);
+    border-radius: 16px;
+}
+
+#project-description {
+    background: none;
+    border: none;
+    text-align: center;
+    color: var(--primary-txt);
+    font-weight: var(--content-font-weight);
+    font-size: var(--content-font-size);
+    border-radius: 16px;
+    resize: none;
+    word-wrap: pretty;
+}
+
+#project-btn-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+}
+
+.project-btn {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-weight: var(--header-font-weight);
+    font-size: var(--header-font-size);
+}
+
+#project-delete-btn {
+    background-color: var(--warning);
+    color: var(--secondary-txt);
+}
+
+#todo-card-container {
+    display: grid;
+    row-gap: 16px;
+    padding: 8px;
+}

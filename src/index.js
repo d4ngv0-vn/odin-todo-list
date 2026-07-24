@@ -3,6 +3,7 @@ import ProjectController from "./controllers/projectController.js";
 import TodoCardController from "./controllers/todoCardController.js";
 import HomePage from "./home/index.js";
 import ProjectsPage from "./projects/index.js";
+import './style.css';
 // import ProjectPage from "./project/index.js";
 
 
